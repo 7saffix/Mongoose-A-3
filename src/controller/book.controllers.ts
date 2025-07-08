@@ -45,7 +45,7 @@ export const getAllBook = async (req: Request, res: Response) => {
   } catch (error: any) {
     res.status(400).json({
       success: false,
-      message: error.message.toString(),
+      message: "Failed to retrieve books",
       error,
     });
   }

@@ -15,7 +15,11 @@ app.use("/api/borrow", borrowRouter);
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, () => {
-  connectDB();
+app.get("/", (req, res) => {
+  res.send("Welcome to the Library Management API!");
+});
+
+app.listen(PORT, async () => {
+  await connectDB();
   console.log("server is running at ", PORT);
 });
