@@ -13,5 +13,4 @@ const borrowSchema = new Schema<IBorrow>(
   }
 );
 
-const Borrow = model("borrow", borrowSchema);
-export default Borrow;
+export const Borrow = model("borrow", borrowSchema);

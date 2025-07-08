@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response } from "express";
 import { Book } from "../model/book.model";
-import Borrow from "../model/borrow.model";
+import { Borrow } from "../model/borrow.model";
 
 export const borrowBook = async (req: Request, res: Response) => {
   try {
