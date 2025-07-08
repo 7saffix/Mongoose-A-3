@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response } from "express";
 import { Book } from "../model/book.model";
 import Borrow from "../model/borrow.model";
@@ -81,9 +82,9 @@ export const getBorrowSummary = async (req: Request, res: Response) => {
       message: "Borrowed books summary retrieved successfully",
       data: summary,
     });
-  } catch (error) {
+  } catch (error: any) {
     res
       .status(400)
-      .json({ success: false, message: "Failed to retrieve summary" });
+      .json({ success: false, message: "Failed to retrieve summary", error });
   }
 };
