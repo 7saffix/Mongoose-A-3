@@ -19,7 +19,15 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Library Management API!");
 });
 
-app.listen(PORT, async () => {
-  await connectDB();
-  console.log("server is running at ", PORT);
-});
+
+(async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, () => {
+      console.log(` Server is running at http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.error("Failed to connect to MongoDB", err);
+    process.exit(1);
+  }
+})();
